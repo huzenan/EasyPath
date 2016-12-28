@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:custom="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="20dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <com.hzn.easypath.EasyPathView
+            android:id="@+id/view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/btn_repeat"
+            android:layout_margin="50dp"
+            android:background="#595959"
+            custom:epvAnimDurations="500,250,250"
+            custom:epvAnimMode="separate"
+            custom:epvDynamic="true"
+            custom:epvFixedHeight="400"
+            custom:epvFixedWidth="400"
+            custom:epvPathString="a61.3,55.2,279.3,273.2,45,359.9 m244.3,244.3 l332.2,332.2 m332.2,244.3 l244.3,332.2"
+            custom:epvState="show"
+            custom:epvStrokeColor="#ffffff"
+            custom:epvStrokeFixedWidth="15"
+            custom:epvStrokeIsRound="true"
+            />
+
+        <Button
+            android:id="@+id/btn_repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="repeat"
+            />
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btn_repeat"
+            android:text="stop"
+            />
+    </RelativeLayout>
+
+</LinearLayout>
