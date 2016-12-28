@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <com.hzn.easypath.EasyPathView
+            android:id="@+id/view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/btn_draw1"
+            android:layout_margin="50dp"
+            android:background="#595959"
+            custom:epvAnimDurations="500,250,250"
+            custom:epvAnimMode="separate"
+            custom:epvFixedHeight="400"
+            custom:epvFixedWidth="400"
+            custom:epvPathString="a61.3,55.2,279.3,273.2,45,359.9 m244.3,244.3 l332.2,332.2 m332.2,244.3 l244.3,332.2"
+            custom:epvState="show"
+            custom:epvStrokeColor="#ffffff"
+            custom:epvStrokeFixedWidth="15"
+            custom:epvStrokeIsRound="true"
+            />
+
+        <Button
+            android:id="@+id/btn_draw1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="draw"
+            />
+
+        <Button
+            android:id="@+id/btn_erase1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/btn_draw1"
+            android:text="erase"
+            />
+
+        <SeekBar
+            android:id="@+id/sb1"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_draw1"
+            android:max="100"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <com.hzn.easypath.EasyPathView
+            android:id="@+id/view2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/btn_draw2"
+            android:layout_margin="50dp"
+            custom:epvAnimDurations="450"
+            custom:epvAnimMode="together"
+            custom:epvFixedHeight="400"
+            custom:epvFixedWidth="400"
+            custom:epvPathString="a61.3,55.2,279.3,273.2,45,359.9 m244.3,244.3 l332.2,332.2 m332.2,244.3 l244.3,332.2"
+            custom:epvState="hide"
+            custom:epvStrokeColor="#595959"
+            custom:epvStrokeFixedWidth="15"
+            custom:epvStrokeIsRound="true"
+            />
+
+        <Button
+            android:id="@+id/btn_draw2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="draw"
+            />
+
+        <Button
+            android:id="@+id/btn_erase2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/btn_draw2"
+            android:text="erase"
+            />
+
+        <SeekBar
+            android:id="@+id/sb2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_draw2"
+            android:max="100"
+            />
+    </RelativeLayout>
+</LinearLayout>
