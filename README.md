@@ -9,9 +9,9 @@ Including a light PathParser tool and animated PathView for Android, which is ba
 
 ## Usage
 ### Step 1
-Define your string path like this:
+Define your path string like this:
 ```xml
-    <string name="your_str_path">
+    <string name="your_path_str">
         a61.3,55.2,279.3,273.2,45,359.9
            m244.3,244.3   l332.2,332.2
               m332.2,244.3   l244.3,332.2
@@ -30,7 +30,7 @@ Define your string path like this:
         custom:epvDynamic="false"
         custom:epvFixedHeight="400"
         custom:epvFixedWidth="400"
-        custom:epvPathString="@string/your_str_path"
+        custom:epvPathString="@string/your_path_str"
         custom:epvState="show"
         custom:epvStrokeColor="#ffffff"
         custom:epvStrokeFixedWidth="15"
