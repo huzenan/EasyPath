@@ -307,16 +307,22 @@ public class EasyPathView extends View {
                         ++curAnimIndex;
                         getDrawAnimator().setDuration(animDurationArr[curAnimIndex]).start();
                     } else {
-                        if (isAnimRepeat)
+                        if (isAnimRepeat) {
+                            if (null != onAnimatorListener)
+                                onAnimatorListener.onAnimRepeat(state);
                             startDraw();
-                        else
+                        } else {
                             state = STATE_SHOW;
+                        }
                     }
                 } else if (animMode == ANIM_MODE_TOGETHER) {
-                    if (isAnimRepeat)
+                    if (isAnimRepeat) {
+                        if (null != onAnimatorListener)
+                            onAnimatorListener.onAnimRepeat(state);
                         startDraw();
-                    else
+                    } else {
                         state = STATE_SHOW;
+                    }
                 }
 
                 if (null != onAnimatorListener)
@@ -325,14 +331,10 @@ public class EasyPathView extends View {
 
             @Override
             public void onAnimationCancel(Animator animation) {
-                if (null != onAnimatorListener)
-                    onAnimatorListener.onAnimCancel(state);
             }
 
             @Override
             public void onAnimationRepeat(Animator animation) {
-                if (null != onAnimatorListener)
-                    onAnimatorListener.onAnimRepeat(state);
             }
         });
         return drawAnimator;
@@ -355,16 +357,22 @@ public class EasyPathView extends View {
                         --curAnimIndex;
                         getEraseAnimator().setDuration(animDurationArr[curAnimIndex]).start();
                     } else {
-                        if (isAnimRepeat)
+                        if (isAnimRepeat) {
+                            if (null != onAnimatorListener)
+                                onAnimatorListener.onAnimRepeat(state);
                             startErase();
-                        else
+                        } else {
                             state = STATE_HIDE;
+                        }
                     }
                 } else if (animMode == ANIM_MODE_TOGETHER) {
-                    if (isAnimRepeat)
+                    if (isAnimRepeat) {
+                        if (null != onAnimatorListener)
+                            onAnimatorListener.onAnimRepeat(state);
                         startErase();
-                    else
+                    } else {
                         state = STATE_HIDE;
+                    }
                 }
 
                 if (null != onAnimatorListener)
@@ -373,14 +381,10 @@ public class EasyPathView extends View {
 
             @Override
             public void onAnimationCancel(Animator animation) {
-                if (null != onAnimatorListener)
-                    onAnimatorListener.onAnimCancel(state);
             }
 
             @Override
             public void onAnimationRepeat(Animator animation) {
-                if (null != onAnimatorListener)
-                    onAnimatorListener.onAnimRepeat(state);
             }
         });
         return eraseAnimator;
@@ -546,15 +550,27 @@ public class EasyPathView extends View {
      * 用于监听路径动画，可选择监听哪些动画状态
      */
     public static abstract class OnAnimatorListener {
+        /**
+         * 动画开始时回调
+         *
+         * @param state 当前动画状态，包括STATE_SHOW，STATE_HIDE，STATE_ANIM_SHOW和STATE_ANIM_HIDE
+         */
         protected void onAnimStart(int state) {
         }
 
+        /**
+         * 动画结束时回调
+         *
+         * @param state 当前动画状态，包括STATE_SHOW，STATE_HIDE，STATE_ANIM_SHOW和STATE_ANIM_HIDE
+         */
         protected void onAnimEnd(int state) {
         }
 
-        protected void onAnimCancel(int state) {
-        }
-
+        /**
+         * 动画重复时回调，紧接着会回调onAnimStart
+         *
+         * @param state 当前动画状态，包括STATE_SHOW，STATE_HIDE，STATE_ANIM_SHOW和STATE_ANIM_HIDE
+         */
         protected void onAnimRepeat(int state) {
         }
     }
