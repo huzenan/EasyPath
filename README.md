@@ -39,20 +39,15 @@ Including a light PathParser tool and animated PathView for Android, which is ba
     ...
     easyPathView.addOnAnimatorListener(new EasyPathView.OnAnimatorListener() {
         @Override
-        protected void onAnimEnd(int state) {
-            // your codes
-        }
-
-        @Override
         protected void onAnimStart(int state) {
             // your codes
         }
-
+        
         @Override
-        protected void onAnimCancel(int state) {
+        protected void onAnimEnd(int state) {
             // your codes
         }
-
+        
         @Override
         protected void onAnimRepeat(int state) {
             // your codes
