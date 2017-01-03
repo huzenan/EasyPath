@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">EasyPath</string>
+
+    <string name="path_string_android">
+        m100,300    c130,20,470,20,500,300    m500,300    l500,525  100,525  100,300  500,300
+            m200,180  o215,180,10,1    m400,180  o385,180,10,2
+                m200,105  l175,75    m400,105  l425,75
+    </string>
+
+    <string name="path_string_menu">
+        o50,50,40,1    m30,30  l70,70    m30,70  l70,30
+    </string>
+
 </resources>
