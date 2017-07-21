@@ -2,8 +2,10 @@
 Including a light PathParser tool and animated PathView for Android, which is based on vector. PathParser is easy to EXTEND, welcome and have fun!
 
 ## ScreenShots
-### Normal
-![EasyPath](https://github.com/huzenan/EasyPath/blob/master/screenshots/easy_path.gif)
+### Separate
+![EasyPathSeparate](https://github.com/huzenan/EasyPath/blob/master/screenshots/easy_path_separate.gif)
+### Together
+![EasyPathTogether](https://github.com/huzenan/EasyPath/blob/master/screenshots/easy_path_together.gif)
 ### Dynamic&Repeat
 ![EasyPathRepeat](https://github.com/huzenan/EasyPath/blob/master/screenshots/easy_path_repeat.gif)
 
@@ -11,10 +13,11 @@ Including a light PathParser tool and animated PathView for Android, which is ba
 ### Step 1
 Define your path string like this:
 ```xml
-    <string name="your_path_str">
-        a61.3,55.2,279.3,273.2,45,359.9
-           m244.3,244.3   l332.2,332.2
-              m332.2,244.3   l244.3,332.2
+    <string name="path_string_android">
+        m100,300    c130,20,470,20,500,300    m500,300
+            l500,525  100,525  100,300  500,300
+                m200,180  o215,180,10,1    m400,180  o385,180,10,2
+                    m200,105  l175,75    m400,105  l425,75
     </string>
 ```
 ### Step 2
@@ -25,15 +28,15 @@ Define your path string like this:
         android:id="@+id/easy_path_view"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        custom:epvAnimDurations="500,250,200"
+        custom:epvAnimDurations="250,350,150,150,150,150"
         custom:epvAnimMode="separate"
         custom:epvDynamic="false"
-        custom:epvFixedHeight="400"
-        custom:epvFixedWidth="400"
-        custom:epvPathString="@string/your_path_str"
+        custom:epvFixedHeight="600"
+        custom:epvFixedWidth="600"
+        custom:epvPathString="@string/path_string_android"
         custom:epvState="show"
-        custom:epvStrokeColor="#ffffff"
-        custom:epvStrokeFixedWidth="15"
+        custom:epvStrokeColor="#09991c"
+        custom:epvStrokeFixedWidth="20"
         custom:epvStrokeIsRound="true"/>
 ```
 > Activity
