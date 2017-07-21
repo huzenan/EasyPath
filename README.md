@@ -2,6 +2,10 @@
 Including a light PathParser tool and animated PathView for Android, which is based on vector. PathParser is easy to EXTEND, welcome and have fun!
 
 ## ScreenShots
+### Icons
+![icon1](https://github.com/huzenan/EasyPath/blob/master/screenshots/icons1.gif)
+
+![icon2](https://github.com/huzenan/EasyPath/blob/master/screenshots/icons2.gif)
 ### Separate
 ![EasyPathSeparate](https://github.com/huzenan/EasyPath/blob/master/screenshots/easy_path_separate.gif)
 ### Together
