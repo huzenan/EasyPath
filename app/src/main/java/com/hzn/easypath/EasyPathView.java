@@ -194,6 +194,8 @@ public class EasyPathView extends View {
         if (strokeFixedWidth != -1)
             paint.setStrokeWidth(strokeFixedWidth * factor);
 
+        rebuildPathData();
+
         setMeasuredDimension(width, height);
     }
 
@@ -464,6 +466,19 @@ public class EasyPathView extends View {
         }
     }
 
+    /**
+     * 重置，在修改参数后，startDraw之前需要调用此方法
+     */
+    public void reset() {
+        initPath();
+        initPaint();
+        initListener();
+        initDuration();
+
+        requestLayout();
+        invalidate();
+    }
+
     // getters and setters
     public int getFixedWidth() {
         return fixedWidth;
@@ -535,6 +550,14 @@ public class EasyPathView extends View {
 
     public void setAnimMode(int animMode) {
         this.animMode = animMode;
+    }
+
+    public boolean isDynamic() {
+        return dynamic;
+    }
+
+    public void setDynamic(boolean dynamic) {
+        this.dynamic = dynamic;
     }
 
     /**
