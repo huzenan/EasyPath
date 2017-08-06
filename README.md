@@ -13,6 +13,21 @@ Including a light PathParser tool and animated PathView for Android, which is ba
 ### Dynamic&Repeat
 ![EasyPathRepeat](https://github.com/huzenan/EasyPath/blob/master/screenshots/easy_path_repeat.gif)
 
+## Maven
+```xml
+    <dependency>
+        <groupId>com.hzn.easypath</groupId>
+        <artifactId>lib</artifactId>
+        <version>1.0.0</version>
+        <type>pom</type>
+    </dependency>
+```
+
+## Gradle
+```xml
+    compile 'com.hzn.easypath:lib:1.0.0'
+```
+
 ## Usage
 ### Step 1
 Define your path string like this:
