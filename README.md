@@ -18,14 +18,14 @@ Including a light PathParser tool and animated PathView for Android, which is ba
     <dependency>
         <groupId>com.hzn.easypath</groupId>
         <artifactId>lib</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <type>pom</type>
     </dependency>
 ```
 
 ## Gradle
 ```xml
-    compile 'com.hzn.easypath:lib:1.0.0'
+    compile 'com.hzn.easypath:lib:1.0.1'
 ```
 
 ## Usage
