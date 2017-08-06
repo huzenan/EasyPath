@@ -28,7 +28,7 @@ Define your path string like this:
 > layout
 
 ```xml
-    <com.hzn.easypath.EasyPathView
+    <com.hzn.lib.EasyPathView
         android:id="@+id/easy_path_view"
         android:layout_width="50dp"
         android:layout_height="50dp"

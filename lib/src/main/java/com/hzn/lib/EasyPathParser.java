@@ -1,4 +1,4 @@
-package com.hzn.easypath;
+package com.hzn.lib;
 
 import android.graphics.Path;
 import android.graphics.RectF;

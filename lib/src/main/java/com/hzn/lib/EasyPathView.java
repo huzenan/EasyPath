@@ -1,4 +1,4 @@
-package com.hzn.easypath;
+package com.hzn.lib;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;

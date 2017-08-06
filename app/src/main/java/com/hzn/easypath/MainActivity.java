@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 
+import com.hzn.lib.EasyPathView;
+
 public class MainActivity extends AppCompatActivity {
 
     private EasyPathView epv1;
