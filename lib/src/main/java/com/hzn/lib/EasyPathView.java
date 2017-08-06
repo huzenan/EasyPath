@@ -46,6 +46,8 @@ public class EasyPathView extends View {
     private int state;
     // 是否为动态的，设置为动态时，将只显示绘制过的路径，不显示路径本身，默认为false
     private boolean dynamic;
+    // 最大线段数，默认为10
+    private int maxPathCount;
 
     public static final int STATE_NONE = -1;
     public static final int STATE_SHOW = 0;
@@ -103,6 +105,7 @@ public class EasyPathView extends View {
         animMode = a.getInteger(R.styleable.EasyPathView_epvAnimMode, ANIM_MODE_TOGETHER);
         state = a.getInteger(R.styleable.EasyPathView_epvState, STATE_SHOW);
         dynamic = a.getBoolean(R.styleable.EasyPathView_epvDynamic, false);
+        maxPathCount = a.getInteger(R.styleable.EasyPathView_epvMaxPathCount, MAX_PATH_COUNT);
         a.recycle();
 
         initPath();
@@ -115,13 +118,13 @@ public class EasyPathView extends View {
         pathCount = 0;
 
         pathDst = new Path();
-        pathDstList = new Path[MAX_PATH_COUNT];
-        for (int i = 0; i < MAX_PATH_COUNT; i++)
+        pathDstList = new Path[maxPathCount];
+        for (int i = 0; i < maxPathCount; i++)
             pathDstList[i] = new Path();
 
         pm = new PathMeasure();
-        pmList = new PathMeasure[MAX_PATH_COUNT];
-        for (int i = 0; i < MAX_PATH_COUNT; i++)
+        pmList = new PathMeasure[maxPathCount];
+        for (int i = 0; i < maxPathCount; i++)
             pmList[i] = new PathMeasure();
     }
 
@@ -153,14 +156,14 @@ public class EasyPathView extends View {
 
         // 获取动画时间长度集
         String[] splitDur = animDurations.split(",");
-        animDurationArr = new long[MAX_PATH_COUNT];
-        int splitLen = Math.min(splitDur.length, MAX_PATH_COUNT);
+        animDurationArr = new long[maxPathCount];
+        int splitLen = Math.min(splitDur.length, maxPathCount);
         for (int i = 0; i < splitLen; i++)
             animDurationArr[i] = Long.parseLong(splitDur[i]);
-        for (int i = splitLen; i < MAX_PATH_COUNT; i++)
+        for (int i = splitLen; i < maxPathCount; i++)
             animDurationArr[i] = ANIM_DURATION_DEFAULT;
 
-        animDurationRatioArr = new float[MAX_PATH_COUNT];
+        animDurationRatioArr = new float[maxPathCount];
 
         isAnimRepeat = false;
     }
@@ -253,8 +256,8 @@ public class EasyPathView extends View {
             pm.setPath(path, false);
             while (pm.nextContour()) {
                 ++pathCount;
-                if (pathCount > MAX_PATH_COUNT) {
-                    pathCount = MAX_PATH_COUNT;
+                if (pathCount > maxPathCount) {
+                    pathCount = maxPathCount;
                     break;
                 }
 

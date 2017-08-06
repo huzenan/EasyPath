@@ -18,5 +18,6 @@
             <enum name="hide" value="1"/>
         </attr>
         <attr name="epvDynamic" format="boolean"/>
+        <attr name="epvMaxPathCount" format="integer"/>
     </declare-styleable>
 </resources>
