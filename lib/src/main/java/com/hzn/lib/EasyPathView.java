@@ -67,6 +67,9 @@ public class EasyPathView extends View {
     private Paint paint;
     private float factor;
 
+    // 用于在EditMode下Preview
+    private Path path;
+
     // 当animMode为ANIM_MODE_SEPARATE时，记录当前播放的动画
     private int curAnimIndex;
     // 动画时间长度集
@@ -207,6 +210,11 @@ public class EasyPathView extends View {
         if (state == STATE_NONE)
             return;
 
+        // 支持预览
+        if (isInEditMode()) {
+            canvas.drawPath(path, paint);
+            return;
+        }
 
         float startRatio = 0.27f * animatorValue * animatorValue + 0.73f;
 
@@ -252,7 +260,7 @@ public class EasyPathView extends View {
         try {
             pathCount = 0;
 
-            Path path = EasyPathParser.getInstance().parsePath(pathString, this, factor);
+            path = EasyPathParser.getInstance().parsePath(pathString, this, factor);
             pm.setPath(path, false);
             while (pm.nextContour()) {
                 ++pathCount;
