@@ -13,19 +13,22 @@ Including a light PathParser tool and animated PathView for Android, which is ba
 ### Dynamic&Repeat
 ![EasyPathRepeat](https://github.com/huzenan/EasyPath/blob/master/screenshots/easy_path_repeat.gif)
 
-## Maven
+## Gradle
+Add to your root build.gradle:
 ```xml
-    <dependency>
-        <groupId>com.hzn.easypath</groupId>
-        <artifactId>lib</artifactId>
-        <version>1.0.1</version>
-        <type>pom</type>
-    </dependency>
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
 
-## Gradle
+Add the dependency:
 ```xml
-    compile 'com.hzn.easypath:lib:1.0.1'
+dependencies {
+    compile 'com.github.huzenan:EasyPath:v1.0.2'
+}
 ```
 
 ## Usage
